@@ -9,10 +9,10 @@
 </head>
 
 <body>
-<form ng-controller="StartUpController">
-Starting: <input ng-model="inputValue.startingEtimate">
-Recomendation : {{inputValue.needed }}
-
-</form>
+	<form ng-controller="StartUpController">
+		Starting: <input ng-model="funding.startingEstimate"> 
+			Recommendation:
+		{{funding.needed}}
+	</form>
 </body>
 </html>
