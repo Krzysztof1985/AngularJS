@@ -5,6 +5,8 @@
 <head>
 <script type="text/javascript" src="angular.js"></script>
 <script type="text/javascript" src="controllers.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="skrypt.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
