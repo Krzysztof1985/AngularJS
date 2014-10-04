@@ -10,8 +10,8 @@
 
 <body>
 <form ng-controller="StartUpController">
-Starting: <input ng-model="funding.startingEtimate">
-Recomendation : {{funding.needed}}
+Starting: <input ng-model="inputValue.startingEtimate">
+Recomendation : {{inputValue.needed }}
 
 </form>
 </body>
