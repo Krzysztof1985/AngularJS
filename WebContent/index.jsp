@@ -10,6 +10,6 @@
 <title>Angular</title>
 </head>
 <body ng-controller="TextController">
-	<p>{{someText}}</p>
+	<p>{{messages.someText}}</p>
 </body>
 </html>

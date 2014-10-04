@@ -1,5 +1,8 @@
-function TextController($scope){
-	$scope.someText = 'You have started your journey with Angular JS!!';
+var messages = {};
+messages.someText = 'Application based on Angular JS! :)';
+
+function TextController($scope) {
+	$scope.messages = messages;
 }
 
 function HelloController($scope) {
