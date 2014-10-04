@@ -1,3 +1,7 @@
+function TextController($scope){
+	$scope.someText = 'You have started your journey with Angular JS!!';
+}
+
 function HelloController($scope) {
 	$scope.greeting = {
 		text : 'Hello'

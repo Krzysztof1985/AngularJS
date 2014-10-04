@@ -9,14 +9,7 @@
 <!-- <script type="text/javascript" src="skrypt.js"></script> -->
 <title>Angular</title>
 </head>
-<body ng-controller='CartController'>
-	<h1>Your Order</h1>
-	<div ng-repeat='item in items'>
-		<span>{{item.title}}</span><br/><span>Price for 1 piece {{item.price
-			| currency}}</span> <br /> <span>Item quantity</span> <input
-			ng-model='item.quantity'> <br /> <span>Total
-			price for items {{item.price * item.quantity | currency}}</span>
-		<button ng-click="remove($index)">Remove</button><br/><br/>
-	</div>
+<body ng-controller="TextController">
+	<p>{{someText}}</p>
 </body>
 </html>
