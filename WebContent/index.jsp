@@ -5,14 +5,18 @@
 <head>
 <script type="text/javascript" src="angular.js"></script>
 <script type="text/javascript" src="controllers.js"></script>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="skrypt.js"></script>
-<title>Insert title here</title>
+<!-- <script type="text/javascript" src="jquery.js"></script> -->
+<!-- <script type="text/javascript" src="skrypt.js"></script> -->
+<title>Angular</title>
 </head>
-<body>
-	<div ng-controller='HelloController'>
-		<input ng-model='greeting.text'>
-		<p>{{greeting.text}}, World</p>
+<body ng-controller='CartController'>
+	<h1>Your Order</h1>
+	<div ng-repeat='item in items'>
+		<span>{{item.title}}</span><br/><span>Price for 1 piece {{item.price
+			| currency}}</span> <br /> <span>Item quantity</span> <input
+			ng-model='item.quantity'> <br /> <span>Total
+			price for items {{item.price * item.quantity | currency}}</span>
+		<button ng-click="remove($index)">Remove</button><br/><br/>
 	</div>
 </body>
 </html>
