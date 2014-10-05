@@ -7,12 +7,11 @@
 <script type="text/javascript" src="controllers.js"></script>
 <title>Angular</title>
 </head>
-
-<body>
-	<form ng-controller="StartUpController">
-		Starting: <input ng-model="funding.startingEstimate"> 
-			Recommendation:
-		{{funding.needed}}
-	</form>
+<body ng-controller='StudentListController'>
+	<ul>
+		<li ng-repeat='student in students'><a
+			href='/student/view/{{student.id}}'>{{student.name}}</a></li>
+	</ul>
+	<button ng-click="insertTom()">Insert</button>
 </body>
 </html>
