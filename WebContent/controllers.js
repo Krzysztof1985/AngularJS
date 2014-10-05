@@ -1,15 +1,33 @@
-function RestaurantTableController($scope) {
-	$scope.directory = [ {
-		name : 'The Handsome Heifer',
-		cuisine : 'BBQ'
+function CartController($scope) {
+	$scope.bill = {};
+	$scope.items = [ {
+		title : 'Paint pots',
+		quantity : 8,
+		price : 3.95
 	}, {
-		name : 'Green`s Green Greens',
-		cuisine : 'Salads'
+		title : 'Polka dots',
+		quantity : 17,
+		price : 12.95
 	}, {
-		name : 'House of Fine Fish',
-		cuisine : 'Seafood'
+		title : 'Pebbles',
+		quantity : 5,
+		price : 6.95
 	} ];
-	$scope.selectRestaurant = function(row) {
-		$scope.selectedRow = row;
+	$scope.totalCart = function() {
+		var total = 0;
+		for (var i = 0, len = $scope.items.length; i < len; i++) {
+			total = total + $scope.items[i].price * $scope.items[i].quantity;
+		}
+		return total;
 	};
+
+	$scope.subtotal = function() {
+		return $scope.totalCart() - $scope.bill.discount;
+	};
+
+	function calculateDiscount(newValue, oldValue, scope) {
+		$scope.bill.discount = newValue > 100 ? 10 : 0;
+	};
+
+	$scope.$watch($scope.totalCart, calculateDiscount);
 }

@@ -21,14 +21,15 @@
 </style>
 </head>
 <body>
-
-	<table ng-controller='RestaurantTableController'>
-		<tr ng-repeat='restaurant in directory'
-			ng-click='selectRestaurant($index)'
-			ng-class='{selected: $index==selectedRow}'>
-			<td>{{restaurant.name}}</td>
-			<td>{{restaurant.cuisine}}</td>
-		</tr>
-	</table>
+	<div ng-controller="CartController">
+		<div ng-repeat="item in items">
+			<span>{{item.title}}</span> <input ng-model="item.quantity">
+			<span>{{item.price | currency}}</span> <span>{{item.price *
+				item.quantity | currency}}</span>
+		</div>
+		<div>Total: {{totalCart() | currency}}</div>
+		<div>Discount: {{bill.discount | currency}}</div>
+		<div>Subtotal: {{subtotal() | currency}}</div>
+	</div>
 </body>
 </html>
