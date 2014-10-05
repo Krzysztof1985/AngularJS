@@ -6,12 +6,22 @@
 <script type="text/javascript" src="angular.js"></script>
 <script type="text/javascript" src="controllers.js"></script>
 <title>Angular</title>
+<style type="text/css">
+.error {
+	background-color: red;
+}
+
+.warning {
+	background-color: yellow;
+}
+</style>
 </head>
-<body ng-controller='StudentListController'>
-	<ul>
-		<li ng-repeat='student in students'><a
-			href='/student/view/{{student.id}}'>{{student.name}}</a></li>
-	</ul>
-	<button ng-click="insertTom()">Insert</button>
+<body>
+
+	<div ng-controller='HeaderController'>
+		<div ng-class='{error: isError, warning: isWarning}'>{{messageText}}</div>
+		<button ng-click='showError()'>Simulate Error</button>
+		<button ng-click='showWarning()'>Simulate Warning</button>
+	</div>
 </body>
 </html>
